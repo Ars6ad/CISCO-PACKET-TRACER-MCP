@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "packetcraft-mcp"
+version = "0.1.0"
+description = "A safe, declarative MCP server for Cisco Packet Tracer automation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = ["mcp[cli]>=1.13,<2", "pydantic>=2.11,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+packetcraft-mcp = "packetcraft_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/packetcraft_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
