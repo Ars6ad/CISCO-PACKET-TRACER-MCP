@@ -1,0 +1,10 @@
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# Local Java build output and dependencies acquired from Maven Central.
+native/build/
+native/vendor/
+
+# Packet Tracer emits encrypted release packages locally.
+extension/release/
